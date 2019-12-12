@@ -1,4 +1,6 @@
-var hello = "hello";
+
+
+// if the document has been loaded, then get data from toolTipData.csv
 $(document).ready(function() {
     $.ajax({
         type: "GET",
@@ -7,7 +9,7 @@ $(document).ready(function() {
         success: function(data) {displayToolTip(data);}
     });
 });
-
+// an array is made with the csv text,split then a random tooltip is chosen and displayed as injected DOM element in the footer
 function displayToolTip(text){
 var textarray = text.split(",");
 var PickedTip = Math.floor(Math.random() * textarray.length);
